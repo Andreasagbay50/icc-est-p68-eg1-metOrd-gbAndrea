@@ -1,7 +1,21 @@
+import controllers.MovieController;
+import models.Movie;
 
 public class App {
     public static void main(String[] args) throws Exception {
         System.out.println("=== Evaluación: Ordenamiento de Películas por Título ===\n");
+        Movie[] movies = generateMoviesList() ;
+        for (Movie n : movies){
+            System.out.println("Nombre " + n.getName() + "año" + n.getYear());
+
+
+        }
+        System.out.println("ordenado");
+        MovieController paraOrdenar = new MovieController();
+        paraOrdenar.sortByTitle(movies);
+        paraOrdenar.mostrar(movies);
+        
+
         // imirpimir la lista de películas sin ordenar
         // ordenar la lista de películas por título utilizando el método sortByTitle del
         // MovieController
